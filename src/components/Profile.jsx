@@ -56,6 +56,31 @@ function Profile() {
     }
   };
 
+  const handleDelete = async () => {
+    const confirm = window.confirm(t("profile.confirm_delete"));
+    if (!confirm) return;
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BACKEND}/users/deleteProfile`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        }
+      );
+
+      if (response.ok) {
+        setUser(null);
+        window.location.href = "/"; // redirige vers home ou login
+      } else {
+        const result = await response.json();
+        setErrorMessage(result.message || t("profile.delete_error"));
+      }
+    } catch (err) {
+      setErrorMessage(t("profile.network_error"));
+    }
+  };
+
   useEffect(() => {
     if (user) {
       setFirstName(user.firstName);
@@ -124,6 +149,10 @@ function Profile() {
 
         <button type="submit" className="form-submit">
           {t("profile.save_changes")}
+        </button>
+
+        <button type="button" className="delete-account" onClick={handleDelete}>
+          {t("profile.delete_account")}
         </button>
       </form>
     </div>

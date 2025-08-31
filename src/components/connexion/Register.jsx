@@ -65,6 +65,7 @@ function Register() {
             <label htmlFor="firstname">{t("register.firstname")}</label>
             <input
               type="text"
+              id="firstname"
               name="firstname"
               onChange={(e) => setFirstName(e.target.value)}
               required
@@ -74,6 +75,7 @@ function Register() {
             <label htmlFor="lastname">{t("register.lastname")}</label>
             <input
               type="text"
+              id="lastname"
               name="lastname"
               onChange={(e) => setLastName(e.target.value)}
               required
@@ -84,6 +86,7 @@ function Register() {
           <label htmlFor="email">{t("register.email")}</label>
           <input
             type="email"
+            id="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
             required

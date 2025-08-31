@@ -3,7 +3,11 @@
     "navbar": {
       "home": "Home",
       "disasters": "Disasters",
-      "ranking": "Ranking"
+      "ranking": "Ranking",
+      "register": "Register",
+      "login": "Login",
+      "logout": "Logout",
+      "profile": "Profile"
     },
     "home": {
       "title": "Are you ready to survive natural disasters?",
@@ -44,6 +48,41 @@
     },
     "ranking": {
       "title": "Ranking"
+    },
+    "register": {
+      "title": "Register",
+      "firstname": "First name:",
+      "lastname": "Last name:",
+      "email": "Email address:",
+      "password": "Password:",
+      "confirm_password": "Confirm password:",
+      "submit": "Register",
+      "login_prompt": "Already registered?",
+      "login_link": "Log in here"
+    },
+    "login": {
+      "title": "Login",
+      "email": "Email address:",
+      "password": "Password:",
+      "submit": "Login",
+      "login_prompt": "Don't have an account yet?",
+      "login_link": "Sign up here"
+    },
+    "profile": {
+      "title": "My profile",
+      "email": "Email address",
+      "firstname": "First name",
+      "lastname": "Last name",
+      "new_password": "New password",
+      "confirm_password": "Confirm password",
+      "password_placeholder": "Leave empty if unchanged",
+      "confirm_password_placeholder": "Confirm the password",
+      "save_changes": "Save changes",
+      "update_success": "Profile updated successfully.",
+      "update_error": "Error while updating the profile.",
+      "password_mismatch": "Passwords do not match.",
+      "network_error": "Network error. Please try again.",
+      "delete_account": "Delete account"
     },
     "footer": {
       "newsletter": {

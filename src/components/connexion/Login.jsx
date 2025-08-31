@@ -20,41 +20,30 @@ function Login() {
       password,
     };
 
-    // try {
-    //   const response = await fetch(
-    //     `${import.meta.env.VITE_API_BACKEND}/auth/login`,
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         Accept: "application/json",
-    //       },
-    //       credentials: "include",
-    //       body: JSON.stringify(data),
-    //     }
-    //   );
     try {
-      const response = await fetch(`/api/auth/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_BACKEND}/auth/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(data),
+        }
+      );
 
       const result = await response.json();
 
       if (response.ok) {
         console.log("Connexion réussie :", result);
-        const meResponse = await fetch(`/api/users/me`, {
-          credentials: "include",
-        });
-
-        // fetch(
-        //   `${import.meta.env.VITE_API_BACKEND}/users/me`,
-        //   {
-        //     credentials: "include",
-        //   }
-        // );
+        const meResponse = await fetch(
+          `${import.meta.env.VITE_API_BACKEND}/users/me`,
+          {
+            credentials: "include",
+          }
+        );
         const meResult = await meResponse.json();
         if (meResponse.ok) {
           setUser(meResult.user);
@@ -79,6 +68,7 @@ function Login() {
           <label htmlFor="email">{t("login.email")}</label>
           <input
             type="email"
+            id="email"
             name="email"
             onChange={(e) => setEmail(e.target.value)}
             required

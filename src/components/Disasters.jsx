@@ -32,6 +32,7 @@ function Disasters() {
     <div className="disasters">
       <div className="disasters-filter">
         <input
+          data-testid="search-input"
           type="text"
           placeholder={t("disasters.filter")}
           value={searchTerm}
@@ -41,7 +42,9 @@ function Disasters() {
       </div>
       <div className="disasters-container">
         {filteredDisasters.map((disaster) => (
-          <div className="disaster-card" key={disaster.id}>
+          <div className="disaster-card" 
+          key={disaster.id}
+          data-testid={`disaster-card-${disaster.id}`}>
             <img
               className="disaster-image"
               src={disaster.image}

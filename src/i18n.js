@@ -9,3 +9,4 @@ i18n.use(initReactI18next).init({
   },
   lng: "fr",
 });
+export default i18n;

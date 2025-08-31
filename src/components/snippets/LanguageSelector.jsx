@@ -25,6 +25,7 @@ function LanguageSelector() {
       <button
         onClick={() => setShowLangMenu((prev) => !prev)}
         className="language-toggle"
+        data-testid="language-selector"
       >
         <img
           src={languages[language].flag}
