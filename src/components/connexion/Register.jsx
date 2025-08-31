@@ -25,19 +25,32 @@ function Register() {
 
     if (data.password === data.confirmPassword) {
       try {
-        const response = await fetch(
-          `${import.meta.env.VITE_API_BACKEND}/auth/register`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            body: JSON.stringify(data),
-          }
-        );
-
+        const response = await fetch("/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ firstName, lastName, email, password }),
+        });
         const result = await response.json();
+        if (response.ok) {
+          console.log("Inscription réussie :", result);
+          navigate("/login");
+        } else {
+          console.error("Erreur inscription :", result.message || result);
+        }
+
+        // await fetch(
+        //   `${import.meta.env.VITE_API_BACKEND}/auth/register`,
+        //   {
+        //     method: "POST",
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //       Accept: "application/json",
+        //     },
+        //     body: JSON.stringify(data),
+        //   }
+        // );
+
+        // const result = await response.json();
 
         if (response.ok) {
           console.log("Inscription réussie :", result);
