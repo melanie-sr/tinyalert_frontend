@@ -57,6 +57,7 @@ function Home() {
             <a
               className="button-banner"
               href="https://www.roblox.com/fr/charts#/?device=computer&country=all"
+              data-testid="play-button"
             >
               {t("home.button")}
             </a>
@@ -72,6 +73,8 @@ function Home() {
             to={disaster.link}
             key={disaster.id}
             className="home-disaster-card"
+            data-testid={`disaster-${disaster.id}`}
+
           >
             <img
               src={disaster.image}

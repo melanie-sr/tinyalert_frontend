@@ -79,7 +79,7 @@ function NavBar() {
                 {t("navbar.ranking")}
               </Link>
             </div>
-            <div>
+            <div className="nav-right">
               {user ? (
                 <>
                   <button className="nav-link" onClick={handleLogout}>
@@ -91,10 +91,10 @@ function NavBar() {
                 </>
               ) : (
                 <>
-                  <Link className="nav-link" to="/register">
+                  <Link className="nav-link nav-login" to="/register">
                     {t("navbar.register")}
                   </Link>
-                  <Link className="nav-link" to="/login">
+                  <Link className="nav-link nav-login" to="/login">
                     {t("navbar.login")}
                   </Link>
                 </>
