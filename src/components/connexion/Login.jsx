@@ -20,19 +20,6 @@ function Login() {
       password,
     };
 
-    // try {
-    //   const response = await fetch(
-    //     `${import.meta.env.VITE_API_BACKEND}/auth/login`,
-    //     {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         Accept: "application/json",
-    //       },
-    //       credentials: "include",
-    //       body: JSON.stringify(data),
-    //     }
-    //   );
     try {
       const response = await fetch(`/api/auth/login`, {
         method: "POST",
@@ -49,12 +36,6 @@ function Login() {
           credentials: "include",
         });
 
-        // fetch(
-        //   `${import.meta.env.VITE_API_BACKEND}/users/me`,
-        //   {
-        //     credentials: "include",
-        //   }
-        // );
         const meResult = await meResponse.json();
         if (meResponse.ok) {
           setUser(meResult.user);

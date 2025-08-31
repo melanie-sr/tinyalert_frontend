@@ -7,7 +7,8 @@ export function UserProvider({ children }) {
 
   const fetchUser = async () => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BACKEND}/users/me`, {
+      // const res = await fetch(`${import.meta.env.VITE_API_BACKEND}/users/me`, {
+      const res = await fetch("/api/users/me", {
         credentials: "include",
       });
       const data = await res.json();

@@ -28,17 +28,23 @@ function Profile() {
     };
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_BACKEND}/users/updateProfile`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify(updatedData),
-        }
-      );
+      const response = await fetch("/api/users/updateProfile", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify(updatedData),
+      });
+      // const response = await fetch(
+      //   `${import.meta.env.VITE_API_BACKEND}/users/updateProfile`,
+      //   {
+      //     method: "PUT",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     credentials: "include",
+      //     body: JSON.stringify(updatedData),
+      //   }
+      // );
 
       const result = await response.json();
 

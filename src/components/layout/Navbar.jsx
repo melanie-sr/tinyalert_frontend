@@ -14,7 +14,8 @@ function NavBar() {
 
   const handleLogout = async () => {
     try {
-      await fetch(`${import.meta.env.VITE_API_BACKEND}/auth/logout`, {
+      // await fetch(`${import.meta.env.VITE_API_BACKEND}/auth/logout`, {
+      await fetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
       });
